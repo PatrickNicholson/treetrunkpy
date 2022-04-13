@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # configs
-config.py
 .vscode
+notes.txt
