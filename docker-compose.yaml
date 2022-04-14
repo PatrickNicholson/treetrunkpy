@@ -1,0 +1,9 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  pybot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pybot:0.1
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
