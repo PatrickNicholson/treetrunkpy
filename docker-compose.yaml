@@ -7,3 +7,5 @@ services:
     image: pybot:0.1
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
+    volumes:
+      - ${PWD}/discordbot/data:/home/discordbot/data

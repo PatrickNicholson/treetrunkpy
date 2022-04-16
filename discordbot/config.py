@@ -5,5 +5,5 @@ import datetime
 
 START_TIME=datetime.datetime.today()
 TOKEN=environ.get('DISCORD_TOKEN')
-LOG_FILE='error.log'
+LOG_FILE='./data/error.log'
 LEVEL='DEBUG'

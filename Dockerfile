@@ -8,4 +8,6 @@ ADD ./discordbot /home/discordbot
 
 WORKDIR /home/discordbot
 
+VOLUME [ "/home/discordbot/data" ]
+
 CMD ["python","./main.py"]
