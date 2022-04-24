@@ -1,11 +1,18 @@
-version: "3.9"  # optional since v1.27.0
 services:
   pybot:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pybot:0.1
+      target: pybot
+    image: pybot
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
     volumes:
-      - ${PWD}/discordbot/data:/home/discordbot/data
+      - ./discordbot/data:/home/discordbot/data
+  
+  sql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: sqlite
+    image: sqlite
