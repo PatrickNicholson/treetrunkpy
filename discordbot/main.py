@@ -5,13 +5,13 @@ import argparse
 import logging
 import discord
 from client import BotClient
-from config import TOKEN, LOG_FILE
+from config import TOKEN, LOG_FILE, LEVEL
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-l','--log', dest='loglevel',
-                        choices=['INFO','DEBUG','WARNING','ERROR','CRITICAL'], default='WARNING')
+                        choices=['INFO','DEBUG','WARNING','ERROR','CRITICAL'], default=LEVEL)
     parser.add_argument('-t', '--token', dest='token', type=str, default=TOKEN)
     args = parser.parse_args()
 

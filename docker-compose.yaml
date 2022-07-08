@@ -1,18 +1,30 @@
+version: "3.2"
 services:
   pybot:
     build:
-      context: .
+      context: ${PWD}/discordbot
       dockerfile: Dockerfile
       target: pybot
     image: pybot
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DATABASE_USR=${USR}
+      - DATABASE_PASS=${PASS}
+      - LEVEL=${LVL}
     volumes:
-      - ./discordbot/data:/home/discordbot/data
-  
-  sql:
+      - ${PWD}/discordbot/log:/home/discordbot/log
+
+  database:
     build:
-      context: .
+      context: ${PWD}/database
       dockerfile: Dockerfile
-      target: sqlite
-    image: sqlite
+      target: mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${USR}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASS}
+    volumes:
+      - ${PWD}/discordbot/data-base:/data/db
+    ports:
+      - "27017:27017"

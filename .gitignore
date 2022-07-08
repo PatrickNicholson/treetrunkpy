@@ -130,4 +130,8 @@ dmypy.json
 
 # configs
 .vscode
-notes.txt
+env.ps1
+
+# data
+discordbot/data-base/*
+discordbot/data-bot/*
