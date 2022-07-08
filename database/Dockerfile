@@ -1,0 +1,1 @@
+FROM mongo:latest as mongo

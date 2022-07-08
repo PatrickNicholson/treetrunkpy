@@ -129,5 +129,9 @@ dmypy.json
 .pyre/
 
 # configs
-config.py
 .vscode
+env.ps1
+
+# data
+database/data/*
+discordbot/logs/*
